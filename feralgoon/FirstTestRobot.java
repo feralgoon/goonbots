@@ -17,7 +17,12 @@ public class FirstTestRobot extends Robot
 
     public void onScannedRobot(ScannedRobotEvent e)
     {
-        if (e.getDistance() > 100)
+
+        if (e.getDistance() < 100)
+        {
+           fire(25);
+        }
+        else
         {
             if (e.getBearing() >= 0) {
                 turnDirection = 1;
@@ -25,13 +30,8 @@ public class FirstTestRobot extends Robot
                 turnDirection = -1;
             }
         }
-        else
-        {
-            fire(25);
-        }
-
         turnRight(e.getBearing());
-        ahead(e.getDistance()/2);
+        ahead(e.getDistance()/1.67);
         scan();
     }
 }
