@@ -20,18 +20,21 @@ public class FirstTestRobot extends Robot
 
         if (e.getDistance() < 100)
         {
-           fire(25);
+            fire(25);
         }
         else
         {
-            if (e.getBearing() >= 0) {
+            if (e.getBearing() >= 0)
+            {
                 turnDirection = 1;
-            } else {
+            }
+            else
+            {
                 turnDirection = -1;
             }
         }
         turnRight(e.getBearing());
-        ahead(e.getDistance()/1.67);
+        ahead(e.getDistance() / 1.67);
         scan();
     }
 }
